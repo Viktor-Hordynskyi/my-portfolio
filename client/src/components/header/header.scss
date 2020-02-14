@@ -1,0 +1,136 @@
+/* navbar style */
+.navbar {
+  background-color: #1b242f;
+  border-bottom: 0.2rem solid #04c2c9;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  bottom: -6rem;
+  transition: all 0.3s linear;
+  height: 6rem;
+  width: 100%;
+  z-index: 9;
+
+  & ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s linear;
+
+    & li a {
+      color: #ffffff;
+      display: block;
+      font-size: 3rem;
+      padding: 0rem 2rem;
+      text-transform: uppercase;
+      transition: color 0.5s;
+
+      &.active {
+        color: #e31b6d;
+      }
+    }
+  }
+  &.fixed {
+    animation: slideDown 0.5s linear;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  &.show {
+    bottom: -6rem;
+    height: 12rem;
+
+    & ul {
+      background-color: #1b242f;
+      opacity: 1;
+      order: 3;
+      left: 0;
+      transform: translateX(0%);
+      visibility: visible;
+      z-index: 7;
+    }
+  }
+  &-toggler {
+    background: url(../../img/icons/menu-open.svg) center no-repeat;
+    background-size: 100% 100%;
+    display: none;
+    cursor: pointer;
+    margin-left: auto;
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    height: 3rem;
+    width: 3rem;
+    z-index: 9;
+  }
+  &-language {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    height: 4rem;
+    width: 11rem;
+    z-index: 9;
+
+    & a {
+      display: block;
+    }
+    & img {
+      height: 4rem;
+      width: 5rem;
+    }
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
+
+@media (max-width: 1024px) {
+  /* navbar style */
+  .navbar ul {
+    opacity: 0;
+    position: absolute;
+    bottom: 0%;
+    transform: translateX(100%);
+    visibility: hidden;
+    height: 6rem;
+  }
+  .navbar-toggler {
+    display: block;
+  }
+  .navbar-language {
+    left: 2rem;
+  }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  html,
+  body {
+    font-size: 8px;
+  }
+
+  /* home style */
+  .home__bg {
+    // background: url(../../img/preview@x2.webp) center no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  /* navbar style */
+  .navbar ul li a {
+    font-size: 2.3rem;
+    padding: 0 1rem;
+  }
+}

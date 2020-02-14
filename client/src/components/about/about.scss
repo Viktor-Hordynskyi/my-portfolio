@@ -1,0 +1,131 @@
+/* about style */
+.about {
+  background-color: #f1f1f1;
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+  padding: 6rem 0rem 7rem;
+
+  &__header {
+    display: inline-block;
+    overflow: hidden;
+    padding-bottom: 3rem;
+  }
+  &__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      max-width: 25%;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    &-image {
+      background: url(../../img/rombus2.webp) center no-repeat;
+      background-size: contain;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 0;
+      width: 11rem;
+      height: 10rem;
+
+      & img {
+        height: 100%;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 3rem;
+  }
+
+  &__me,
+  &__skills {
+    width: 50%;
+  }
+
+  &__me {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    overflow: hidden;
+
+    &-image {
+      flex-shrink: 0;
+      margin: 0 auto;
+      width: 25rem;
+
+      & img {
+        width: 100%;
+      }
+    }
+
+    &-description {
+      margin: 0 auto;
+      padding: 0rem 2rem 5rem;
+      text-align: center;
+      width: 80%;
+    }
+  }
+
+  &__skills {
+    &-element {
+      background-color: #ccc;
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      height: 3rem;
+
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    &-title {
+      background-color: #04c2c9;
+      color: #ffffff;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 15rem;
+
+      & span {
+        font-size: 1.8rem;
+      }
+    }
+
+    &-progress {
+      width: 100%;
+
+      & span {
+        color: #333;
+        display: block;
+        font-size: 1.8rem;
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+      }
+    }
+
+    &-indicator {
+      background-color: #00a1a7;
+      animation: progress 1.5s linear;
+      height: 100%;
+    }
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+}
