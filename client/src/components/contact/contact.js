@@ -21,6 +21,7 @@ const Contact = () => {
         message: message
       }
     }).then(response => {
+      console.log(response)
       if (response.data.msg === "success") {
         setStatus("Your message has been sent, we will contact you shortly.");
         setShow(true);
