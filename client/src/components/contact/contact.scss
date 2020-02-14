@@ -32,6 +32,7 @@
   &__form {
     max-width: 50rem;
     margin: 0 auto;
+    position: relative;
 
     & form {
       display: flex;
@@ -96,6 +97,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 50rem;
+    width: 100%;
 
     &.show {
       display: block;
