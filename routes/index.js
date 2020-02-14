@@ -6,8 +6,8 @@ const { nodemailer } = require("../controllers/nodemailer");
 
 // Basic "/index" routes
 router.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, '../controllers/nodemailer', 'index.html'));
   res.status(200).send([{ skills: "/skills" }, { projects: "/projects" }]);
+  res.sendFile(path.join(__dirname, '../controllers/nodemailer', 'index.html'));
 });
 
 /* GET pages. */
