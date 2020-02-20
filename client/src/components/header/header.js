@@ -7,7 +7,7 @@ function Header({ menu, togglerHandler, classes, linkClick }) {
   return (
     <header id="navbar">
       <nav className={classes.join(" ")}>
-        <div className="navbar-language">
+        <div className="navbar-language animated zoomIn" data-wow-delay=".5s">
           <a href="/ru.html">
             <img src={ru} alt="ru" />
           </a>
@@ -20,7 +20,7 @@ function Header({ menu, togglerHandler, classes, linkClick }) {
         <ul className="container">
           {menu.map((e, idx) => {
             return (
-              <li key={idx}>
+              <li key={idx} className="wow zoomIn" data-wow-delay={`${((idx+1)/4)}s`}>
                 <a
                   href={`#${e.title}`}
                   className={e.status ? "active" : ""}

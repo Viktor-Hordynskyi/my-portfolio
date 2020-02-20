@@ -17,22 +17,24 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s linear;
+    & li {
+      display: inline-block;
+      & a {
+        color: #ffffff;
+        display: block;
+        font-size: 3rem;
+        padding: 0rem 2rem;
+        text-transform: uppercase;
+        transition: color 0.5s;
 
-    & li a {
-      color: #ffffff;
-      display: block;
-      font-size: 3rem;
-      padding: 0rem 2rem;
-      text-transform: uppercase;
-      transition: color 0.5s;
-
-      &.active {
-        color: #e31b6d;
+        &.active {
+          color: #e31b6d;
+        }
       }
     }
   }
   &.fixed {
-    animation: slideDown 0.5s linear;
+    animation: headerDown 0.5s linear;
     position: fixed;
     top: 0;
     width: 100%;
@@ -85,7 +87,7 @@
   }
 }
 
-@keyframes slideDown {
+@keyframes headerDown {
   0% {
     -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
@@ -103,7 +105,7 @@
     position: absolute;
     bottom: 0%;
     transform: translateX(100%);
-    visibility: hidden;
+    // visibility: hidden;
     height: 6rem;
   }
   .navbar-toggler {
@@ -123,7 +125,6 @@
 
   /* home style */
   .home__bg {
-    // background: url(../../img/preview@x2.webp) center no-repeat;
     background-attachment: fixed;
     background-size: cover;
   }
@@ -132,5 +133,25 @@
   .navbar ul li a {
     font-size: 2.3rem;
     padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    &.show {
+      height: 50vh;
+    }
+    &.fixed .wow {
+      visibility: visible!important;
+    }
+    & ul {
+      flex-direction: column;
+      padding-top: 6rem;
+      height: 100%;
+
+      & li:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
   }
 }

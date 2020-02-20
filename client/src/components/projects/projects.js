@@ -18,7 +18,7 @@ const Projects = () => {
           <hr className="hr wow fadeInDown" />
 
           <h5>
-            Here, below, you can take a look for some of my works:<br /> Landing Page, Single Page, or simple HTML site with many pages.
+            Here, below, you can take a look at some of my works:
 					</h5>
         </div>
 

@@ -4,7 +4,8 @@ import Header from "../header";
 import Content from "../content";
 import Footer from "../footer/";
 // import PortfolioService from "../../services/portfolio-service";
-
+import WOW from "wowjs";
+import "animate.css";
 import "./app.scss";
 
 function App() {
@@ -21,11 +22,22 @@ function App() {
   //   console.log(res);
   // });
   useEffect(() => {
-    function handlerScroll() {
-      setFixed(document.getElementById("home").offsetHeight <= window.scrollY);
+    new WOW.WOW({ live: false }).init();
 
-      setMenu(
-        m => m.map(e => {
+    function handlerScroll() {
+      if (document.getElementById("root").clientWidth <= 480) {
+        setFixed(0 < window.scrollY);
+        if ((0 === window.scrollY)) {
+          setTogglerStatus(false);
+        }
+      } else {
+        setFixed(
+          document.getElementById("home").offsetHeight <= window.scrollY
+        );
+      }
+
+      setMenu(m =>
+        m.map(e => {
           const offsetTop = document.getElementById(e.title).offsetTop;
           const offsetHeight = document.getElementById(e.title).offsetHeight;
           e.status = false;

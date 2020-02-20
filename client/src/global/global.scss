@@ -1,9 +1,9 @@
 /* Fonts */
 @font-face {
-  font-family: "Raleway-Regular";
-  src: url("../fonts/Raleway-Regular.eot");
-  src: url("../fonts/Raleway-Regular.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/Raleway-Regular.woff") format("woff"), url("../fonts/Raleway-Regular.ttf") format("truetype");
+  font-family: "Roboto-Regular";
+  src: url("../fonts/Roboto-Regular.eot");
+  src: url("../fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Roboto-Regular.woff") format("woff"), url("../fonts/Roboto-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -126,7 +126,7 @@ html {
 }
 body {
   color: #616161;
-  font-family: "Raleway-Regular";
+  font-family: "Roboto-Regular";
   font-weight: 400;
   line-height: normal;
 }
@@ -196,4 +196,53 @@ img {
   text-align: center;
   max-width: 1200px;
   width: 100%;
+}
+
+/* Extra Large desktops and laptops */
+@media (min-width: 1440px) and (max-width: 1919px) {
+	html, body {
+		font-size: 10px;
+	}
+}
+/* Large desktops and laptops */
+@media (min-width: 1200px) and (max-width: 1439px) {
+	html, body {
+		font-size: 10px;
+	}
+}
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+	html, body {
+		font-size: 10px;
+	}
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+	html, body {
+		font-size: 9px;
+	}
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+	html, body {
+		font-size: 8px;
+	}
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+	html, body {
+		font-size: 7px;
+	}
+	p {
+		font-size: 1.9rem;
+	}
+}
+
+@media (max-width: 375px) {
+	html, body {
+		font-size: 6px;
+  }
 }

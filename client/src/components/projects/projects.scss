@@ -12,6 +12,9 @@
     flex-direction: row;
     flex-wrap: wrap;
     padding: 1rem;
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
   }
   &__info {
     border-radius: 1rem;
@@ -21,6 +24,10 @@
     overflow: hidden;
     position: relative;
     width: calc(50% - 2rem);
+    @media (max-width: 767px) {
+      margin: 0 auto 2rem;
+      width: 95%;
+    }
   }
   &__preview {
     padding: 2rem 2rem 4rem;
@@ -79,11 +86,12 @@
     position: absolute;
     bottom: 0;
     text-align: justify;
+    width: 100%;
   }
 
   &__buttons {
     display: flex;
-    padding-top: .5rem;
+    padding-top: 0.5rem;
     text-align: center;
 
     & a {
@@ -98,12 +106,31 @@
 
       &:first-child {
         margin-right: 2rem;
+
+        @media (max-width: 1024px) {
+          margin-right: 0.5rem;
+        }
+
+        // @media (max-width: 767px) {
+        //   margin-right: 0.5rem;
+        //   padding: 0.25rem 0.5rem;
+        // }
       }
       &:hover,
       &:focus {
         background-color: #04c2c9;
         color: #ffffff;
       }
+
+      @media (max-width: 1024px) {
+        font-size: 1.2rem;
+        padding: 0.25rem 0.5rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      // flex-direction: column;
+      // width: 65%;
     }
   }
 }

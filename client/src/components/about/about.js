@@ -72,13 +72,12 @@ function About() {
             <div className="about__me-image wow flipInY" data-wow-delay=".2s">
               <img src={Viktor} alt="Viktor Hordynskyi" />
             </div>
-            <div
-              className="about__me-description wow bounceInRight"
-              data-wow-delay=".8s"
-            >
-              <h3>Who's this guy?</h3>
+            <div className="about__me-description">
+              <h3 className="wow fadeInDown" data-wow-delay=".2s">
+                Who's this guy?
+              </h3>
 
-              <p>
+              <p className="wow fadeInUp" data-wow-delay=".4s">
                 I'm the Front-End Developer in Rivne, Ukraine.
                 <br />
                 I have a serious passion for UI effects, animations and creating
@@ -100,7 +99,8 @@ function About() {
 
               <div className="about__skills-progress">
                 <div
-                  className="about__skills-indicator"
+                  className="about__skills-indicator wow"
+                  data-wow-duration="2s"
                   style={{ width: "80%" }}
                 ></div>
                 <span>80%</span>
@@ -114,7 +114,8 @@ function About() {
 
               <div className="about__skills-progress">
                 <div
-                  className="about__skills-indicator"
+                  className="about__skills-indicator wow"
+                  data-wow-duration="2s"
                   style={{ width: "90%" }}
                 ></div>
                 <span>90%</span>
@@ -128,7 +129,8 @@ function About() {
 
               <div className="about__skills-progress">
                 <div
-                  className="about__skills-indicator"
+                  className="about__skills-indicator wow"
+                  data-wow-duration="2s"
                   style={{ width: "60%" }}
                 ></div>
                 <span>60%</span>
@@ -142,7 +144,8 @@ function About() {
 
               <div className="about__skills-progress">
                 <div
-                  className="about__skills-indicator"
+                  className="about__skills-indicator wow"
+                  data-wow-duration="2s"
                   style={{ width: "70%" }}
                 ></div>
                 <span>70%</span>
@@ -156,7 +159,8 @@ function About() {
 
               <div className="about__skills-progress">
                 <div
-                  className="about__skills-indicator"
+                  className="about__skills-indicator wow"
+                  data-wow-duration="2s"
                   style={{ width: "75%" }}
                 ></div>
                 <span>75%</span>
@@ -170,7 +174,8 @@ function About() {
 
               <div className="about__skills-progress">
                 <div
-                  className="about__skills-indicator"
+                  className="about__skills-indicator wow"
+                  data-wow-duration="2s"
                   style={{ width: "50%" }}
                 ></div>
                 <span>50%</span>
@@ -184,7 +189,8 @@ function About() {
 
               <div className="about__skills-progress">
                 <div
-                  className="about__skills-indicator"
+                  className="about__skills-indicator wow"
+                  data-wow-duration="2s"
                   style={{ width: "60%" }}
                 ></div>
                 <span>60%</span>

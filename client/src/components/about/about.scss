@@ -3,11 +3,13 @@
   background-color: #f1f1f1;
   clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
   padding: 6rem 0rem 7rem;
+  @media (max-width: 1024px) {
+    clip-path: polygon(0 0, 100% 0, 100% 98%, 0% 100%);
+  }
 
   &__header {
     display: inline-block;
     overflow: hidden;
-    padding-bottom: 3rem;
   }
   &__info {
     display: flex;
@@ -21,6 +23,10 @@
       max-width: 25%;
       padding: 2rem 1rem;
       text-align: center;
+      @media (max-width: 1024px) {
+        margin: 0 auto;
+        max-width: 95%;
+      }
     }
     &-image {
       background: url(../../img/rombus2.webp) center no-repeat;
@@ -36,6 +42,10 @@
         height: 100%;
       }
     }
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
   }
 
   &__footer {
@@ -43,11 +53,18 @@
     flex-direction: row;
     justify-content: space-between;
     padding-top: 3rem;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
   }
 
   &__me,
   &__skills {
     width: 50%;
+    @media (max-width: 1024px) {
+      width: 100%;
+    }
   }
 
   &__me {
@@ -67,10 +84,16 @@
     }
 
     &-description {
-      margin: 0 auto;
-      padding: 0rem 2rem 5rem;
+      overflow: hidden;
+      padding-bottom: 5rem;
       text-align: center;
-      width: 80%;
+      & p,
+      & h3 {
+        padding: 0 10rem;
+        @media (max-width: 1024px) {
+          padding: 0 1rem;
+        }
+      }
     }
   }
 
@@ -118,8 +141,13 @@
 
     &-indicator {
       background-color: #00a1a7;
-      animation: progress 1.5s linear;
+      animation: progress;
       height: 100%;
+    }
+
+    @media (max-width: 1024px) {
+      margin: 0 auto;
+      width: 95%;
     }
   }
 }

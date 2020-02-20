@@ -9,12 +9,12 @@ function Intro() {
 
       <div className="intro__preview" id="home">
         <h1>
-          Hello, I'm <span>Viktor Hordynskyi</span>.
+          <span className="wow zoomIn" data-wow-delay=".1s">Hello, I'm <strong>Viktor Hordynskyi</strong>.</span>
           <br />
-          I'm a front-end web developer.
+          <span className="wow zoomIn" data-wow-delay=".5s">I'm a front-end web developer.</span>
         </h1>
 
-        <a href="#about" className="intro__button">
+        <a href="#about" className="intro__button wow zoomIn" data-wow-delay="1s">
           View my works <img src={arrowRight} alt="arrow right" />
         </a>
       </div>
