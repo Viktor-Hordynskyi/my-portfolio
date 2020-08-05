@@ -7,11 +7,12 @@
   height: 5rem;
 
   &.home {
-    height: 18rem;
+    height: 20rem;
   }
   &__soc {
     display: flex;
     justify-content: center;
+    margin-bottom: 1rem;
     position: relative;
 
     & a {
@@ -65,7 +66,7 @@
   overflow: hidden;
   padding: 1rem;
   position: absolute;
-  top: -6.5rem;
+  top: -7.5rem;
   height: 5.5rem;
   width: 5rem;
 

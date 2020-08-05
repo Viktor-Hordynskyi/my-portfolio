@@ -1,0 +1,77 @@
+/* navbar style */
+.navbarProject {
+  background-color: #1b242f;
+  border-bottom: 0.2rem solid #04c2c9;
+  display: flex;
+  transition: all 0.3s linear;
+  padding: 0 2rem;
+  height: 6rem;
+  width: 100%;
+  z-index: 9;
+
+  & .container {
+    display: flex;
+    height: 100%;
+
+    & li {
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      & a {
+        color: #04c2c9;
+        display: flex;
+        align-items: center;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+
+        & img {
+          transform: rotate(180deg);
+          height: 2.5rem;
+          width: 2.5rem;
+        }
+      }
+    }
+  }
+
+  &-language {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    height: 4rem;
+    width: 13rem;
+    z-index: 9;
+
+    & button {
+      background-color: transparent;
+      display: block;
+    }
+    & img {
+      height: 4rem;
+      width: 5rem;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  /* navbar style */
+  
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  html,
+  body {
+    font-size: 8px;
+  }
+
+  /* home style */
+  
+}
+
+@media (max-width: 480px) {
+  
+}

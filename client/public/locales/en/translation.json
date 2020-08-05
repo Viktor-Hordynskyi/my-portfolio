@@ -1,0 +1,50 @@
+{
+  "intro": {
+    "1": "Hello, I'm",
+    "2": "Viktor Hordynskyi",
+    "3": "I'm a front-end web developer.",
+    "4": "View my works"
+  },
+  "header": {
+    "1": "home",
+    "2": "about",
+    "3": "projects",
+    "4": "contact"
+  },
+  "about": {
+    "1": "About",
+    "2": "Fast",
+    "3": "Responsive",
+    "4": "Intuitive",
+    "5": "Dynamic",
+    "6": "Fast load times and lag-free interaction, my highest priority.",
+    "7": "My layouts will work on any device, big or small.",
+    "8": "Strong preference for easy to use, intuitive UX/UI.",
+    "9": "Websites don't have to be static, I love making pages come to life.",
+    "10": "Who's this guy?",
+    "11": "I'm the Front-End Developer in Rivne, Ukraine. I have a serious passion for UI effects, animations and creating intuitive, dynamic user experiences. I build bespoke websites to help my clients push their businesses further online.",
+    "12": "Let's make something special."
+  },
+  "projects": {
+    "1": "Projects",
+    "2": "Here, you can take a look at some of my works:",
+    "3": "View on GitLab",
+    "4": "Live Demo",
+    "5": "You can see more of my works(their code) on"
+  },
+  "contact": {
+    "1": "Contact",
+    "2a": "Have a question or want to work together?",
+    "2b": "Visit my profile on UpWork:",
+    "2c": "or write to me in the form below:",
+    "3": "Name",
+    "4": "Email",
+    "5": "Your Message",
+    "6": "submit",
+    "7": "Your message has been sent, we will contact you shortly.",
+    "8": "Message failed to send."
+  },
+  "projectHeader": {
+    "1": "Home"
+  }
+}

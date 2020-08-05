@@ -12,7 +12,7 @@
 
 .contact {
   background-color: #252934;
-  padding: 5rem 0;
+  padding: 5rem 0 7rem;
   position: relative;
 
   &__header {
@@ -24,11 +24,22 @@
     & hr {
       background-color: #ffffff;
     }
-  }
-  & p {
+    & p {
     color: #04c2c9;
-    padding-top: 1rem;
+    font-size: 1.8em;
+    padding-top: 2rem;
+
+    & a {
+      display: inline-block;
+
+      & img {
+        height: 7rem;
+        width: 7rem;
+      }
+    }
   }
+  }
+  
   &__form {
     max-width: 50rem;
     margin: 0 auto;
@@ -59,7 +70,7 @@
     }
 
     & input {
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
     & input:focus,
     & textarea:focus {
@@ -76,7 +87,7 @@
       font-size: 2rem;
       font-weight: 700;
       margin-top: 2rem;
-      padding: 1rem 2rem;
+      padding: 1rem 2.5rem;
       text-transform: uppercase;
 
       &:hover,

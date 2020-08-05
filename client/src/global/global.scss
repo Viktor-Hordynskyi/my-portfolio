@@ -163,6 +163,12 @@ a {
 }
 button {
   border: 0;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+a:focus,
+button:focus {
+  outline: none;
 }
 hr {
   background-color: #616161;

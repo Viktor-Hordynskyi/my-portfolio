@@ -1,0 +1,6 @@
+.project {
+  & iframe {
+    height: calc(100vh - 6rem - .2rem);
+    width: 100%;
+  }
+}

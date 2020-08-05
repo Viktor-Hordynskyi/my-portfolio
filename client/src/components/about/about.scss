@@ -20,16 +20,25 @@
       display: flex;
       align-items: center;
       flex-direction: column;
+      justify-content: center;
       max-width: 25%;
       padding: 2rem 1rem;
       text-align: center;
+
       @media (max-width: 1024px) {
+        margin: 0 auto;
+        max-width: 45%;
+        width: 45%;
+      }
+
+      @media (max-width: 480px) {
         margin: 0 auto;
         max-width: 95%;
       }
     }
     &-image {
-      background: url(../../img/rombus2.webp) center no-repeat;
+      background-color: #04c2c9;
+      clip-path: polygon(25% 0%, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
       background-size: contain;
       display: flex;
       align-items: center;
@@ -43,7 +52,7 @@
       }
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 480px) {
       flex-direction: column;
     }
   }
@@ -74,12 +83,20 @@
     overflow: hidden;
 
     &-image {
+      background-color: #04c2c9;
+      clip-path: polygon(20% 0%, 80% 0, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
       margin: 0 auto;
+      height: 29.5rem;
       width: 25rem;
 
       & img {
-        width: 100%;
+        clip-path: polygon(20% 0%, 80% 0, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
+        height: 99%;
+        width: 99%;
       }
     }
 
@@ -87,11 +104,17 @@
       overflow: hidden;
       padding-bottom: 5rem;
       text-align: center;
+      white-space: pre-line;
+
+      & button {
+        color: #00a1a7;
+      }
+
       & p,
       & h3 {
-        padding: 0 10rem;
+        padding: 0 5rem;
         @media (max-width: 1024px) {
-          padding: 0 1rem;
+          padding: 0 3rem;
         }
       }
     }

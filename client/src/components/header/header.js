@@ -1,33 +1,38 @@
 import React from "react";
-import "./header.scss";
-import eng from "../../img/icons/eng.svg";
+import { useTranslation } from "react-i18next";
+import en from "../../img/icons/en.svg";
 import ru from "../../img/icons/ru.svg";
+import "./header.scss";
 
-function Header({ menu, togglerHandler, classes, linkClick }) {
+function Header({ menu, togglerHandler, classes, linkClick, t }) {
+  const { i18n } = useTranslation();
+  function translate(lang) {
+    i18n.changeLanguage(lang);
+    i18n.reloadResources(lang);
+  }
   return (
     <header id="navbar">
       <nav className={classes.join(" ")}>
-        <div className="navbar-language animated zoomIn" data-wow-delay=".5s">
-          <a href="/ru.html">
+        <div className="navbar-language">
+          <button onClick={() => translate("ru")}>
             <img src={ru} alt="ru" />
-          </a>
+          </button>
 
-          <a href="/">
-            <img src={eng} alt="eng" />
-          </a>
+          <button onClick={() => translate("en")}>
+            <img src={en} alt="en" />
+          </button>
         </div>
 
         <ul className="container">
           {menu.map((e, idx) => {
             return (
-              <li key={idx} className="wow zoomIn" data-wow-delay={`${((idx+1)/4)}s`}>
-                <a
-                  href={`#${e.title}`}
+              <li key={idx}>
+                <button
                   className={e.status ? "active" : ""}
-                  onClick={linkClick}
+                  onClick={() => linkClick(e.id)}
                 >
-                  {e.title}
-                </a>
+                  {t(`header.${idx + 1}`)}
+                </button>
               </li>
             );
           })}

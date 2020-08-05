@@ -1,55 +1,54 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import Intro from "../intro";
 import Header from "../header";
 import Content from "../content";
-import Footer from "../footer/";
-// import PortfolioService from "../../services/portfolio-service";
+import Footer from "../footer";
+import projectsArr from "../../projectsArr";
 import WOW from "wowjs";
 import "animate.css";
-import "./app.scss";
 
 function App() {
+  const { t } = useTranslation();
   const [fixed, setFixed] = useState(false);
   const [togglerStatus, setTogglerStatus] = useState(false);
   const [menu, setMenu] = useState([
-    { title: "home", status: true },
-    { title: "about", status: false },
-    { title: "projects", status: false },
-    { title: "contact", status: false }
+    { id: "home", status: true },
+    { id: "about", status: false },
+    { id: "projects", status: false },
+    { id: "contact", status: false },
   ]);
 
-  // PortfolioService.getData('skills').then(res => {
-  //   console.log(res);
-  // });
   useEffect(() => {
     new WOW.WOW({ live: false }).init();
 
     function handlerScroll() {
-      if (document.getElementById("root").clientWidth <= 480) {
-        setFixed(0 < window.scrollY);
-        if ((0 === window.scrollY)) {
-          setTogglerStatus(false);
+      const idHome = document.getElementById("home");
+      if (idHome) {
+        if (document.getElementById("root").clientWidth <= 480) {
+          setFixed(0 < window.scrollY);
+          if (0 === window.scrollY) {
+            setTogglerStatus(false);
+          }
+        } else {
+          setFixed(idHome.offsetHeight <= window.scrollY);
         }
-      } else {
-        setFixed(
-          document.getElementById("home").offsetHeight <= window.scrollY
+
+        setMenu((m) =>
+          m.map((e) => {
+            const offsetTop = document.getElementById(e.id).offsetTop;
+            const offsetHeight = document.getElementById(e.id).offsetHeight;
+            e.status = false;
+            if (
+              offsetTop <= window.scrollY &&
+              offsetTop + offsetHeight > window.scrollY
+            ) {
+              e.status = !e.status;
+            }
+            return e;
+          })
         );
       }
-
-      setMenu(m =>
-        m.map(e => {
-          const offsetTop = document.getElementById(e.title).offsetTop;
-          const offsetHeight = document.getElementById(e.title).offsetHeight;
-          e.status = false;
-          if (
-            offsetTop <= window.scrollY &&
-            offsetTop + offsetHeight > window.scrollY
-          ) {
-            e.status = !e.status;
-          }
-          return e;
-        })
-      );
     }
 
     window.addEventListener("scroll", handlerScroll);
@@ -63,23 +62,28 @@ function App() {
     setTogglerStatus(!togglerStatus);
   }
 
-  function linkClick() {
+  function linkClick(id) {
     setTogglerStatus(false);
+    document.getElementById(id).scrollIntoView();
   }
 
+  function scrollToTop() {
+    window.scrollTo(0, 0);
+  }
   return (
-    <div className="app">
-      <Intro />
+    <>
+      <Intro linkClick={linkClick} t={t} />
       <Header
         menu={menu}
         fixed={fixed}
         togglerHandler={togglerHandler}
         classes={classes}
         linkClick={linkClick}
+        t={t}
       />
-      <Content />
-      <Footer />
-    </div>
+      <Content linkClick={linkClick} projectsArr={projectsArr} t={t} />
+      <Footer scrollToTop={scrollToTop} t={t} />
+    </>
   );
 }
 

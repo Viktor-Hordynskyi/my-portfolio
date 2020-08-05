@@ -3,15 +3,14 @@ import instagram from '../../img/icons/instagram.svg'
 import facebook from '../../img/icons/facebook.svg'
 import gitlab from '../../img/icons/gitlab.svg'
 import arrow from '../../img/icons/arrow-double-up.svg'
-
 import './footer.scss'
 
-const Footer = () => {
+const Footer = ({ scrollToTop }) => {
   return (
     <footer className="footer home">
       <div className="container">
         <div className="footer__soc">
-          <div id="back-to-top" className="wow jackInTheBox" data-wow-delay=".2s">
+          <div id="back-to-top" className="wow jackInTheBox" data-wow-delay=".2s" onClick={scrollToTop}>
             <img src={arrow} alt="arrow"/>
           </div>
 
@@ -28,7 +27,7 @@ const Footer = () => {
           </a>
         </div>
 
-        <h5>Viktor Hordynskyi <span>{new Date().getFullYear()}</span></h5>
+        <h5>Viktor Hordynskyi <span>2018 - {new Date().getFullYear()}</span></h5>
       </div>
     </footer>
   )

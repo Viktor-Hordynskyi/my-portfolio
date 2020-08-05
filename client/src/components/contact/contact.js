@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./contact.scss";
+import upwork from "../../img/upwork.png";
+import "./contact.scss"
 
-const Contact = () => {
+const Contact = ({ t }) => {
   const [status, setStatus] = useState(null);
   const [show, setShow] = useState(false);
 
@@ -18,11 +19,11 @@ const Contact = () => {
       data: {
         name: name,
         email: email,
-        message: message
-      }
-    }).then(response => {
+        message: message,
+      },
+    }).then((response) => {
       if (response.data.msg === "success") {
-        setStatus("Your message has been sent, we will contact you shortly.");
+        setStatus(t("contact.7"));
         setShow(true);
         resetForm();
 
@@ -31,7 +32,7 @@ const Contact = () => {
           setShow(false);
         }, 3000);
       } else if (response.data.msg === "fail") {
-        setStatus("Message failed to send.");
+        setStatus(t("contact.8"));
         setShow(true);
 
         setTimeout(() => {
@@ -61,12 +62,24 @@ const Contact = () => {
 
       <div className="container">
         <div className="contact__header">
-          <h2 className="wow fadeInDown">Contact</h2>
+          <h2 className="wow fadeInDown">{t("contact.1")}</h2>
 
           <hr className="hr wow fadeInDown" />
 
           <p className="wow zoomIn" data-wow-delay=".1s">
-            Have a question or want to work together?
+            {t("contact.2a")}
+            <br />
+            {t("contact.2b")}
+            <br />
+            <a
+              href="https://www.upwork.com/o/profiles/users/~01eb2efd39e908c5f2/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={upwork} alt="UpWork profile" />
+            </a>
+            <br />
+            {t("contact.2c")}
           </p>
         </div>
 
@@ -76,10 +89,11 @@ const Contact = () => {
               required
               type="text"
               name="name"
-              placeholder="Name"
+              placeholder={t("contact.3")}
               id="name-input"
               className="wow zoomIn"
               data-wow-delay=".2s"
+              data-wow-duration="1.5s"
               autoComplete="off"
             />
 
@@ -87,10 +101,11 @@ const Contact = () => {
               required
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder={t("contact.4")}
               id="email-input"
               className="wow zoomIn"
               data-wow-delay=".3s"
+              data-wow-duration="1.5s"
               autoComplete="off"
             />
 
@@ -98,10 +113,11 @@ const Contact = () => {
               required
               name="message"
               id="message-input"
-              rows="5"
-              placeholder="Your Message"
+              rows="6"
+              placeholder={t("contact.5")}
               className="wow zoomIn"
               data-wow-delay=".4s"
+              data-wow-duration="1.5s"
               autoComplete="off"
             ></textarea>
 
@@ -110,7 +126,8 @@ const Contact = () => {
                 type="submit"
                 className="button wow flipInY"
                 data-wow-delay=".5s"
-                value="submit"
+                data-wow-duration="1.5s"
+                value={t("contact.6")}
               />
             </div>
           </form>
